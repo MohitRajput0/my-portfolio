@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --bg: #08090c;
+  --bg-elev: #0e1015;
+  --surface: #13151b;
+  --surface-2: #191c24;
+  --border: #262a35;
+  --border-soft: #1c1f28;
+  --text: #edeef2;
+  --text-muted: #9599ab;
+  --text-faint: #5b6072;
+  --accent: #4f8bff;
+  --accent-soft: rgba(79, 139, 255, 0.12);
+  --accent-strong: #7aa8ff;
+}
+
+[data-theme="light"] {
+  --bg: #f7f7f9;
+  --bg-elev: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0f1f4;
+  --border: #e2e3e8;
+  --border-soft: #ececef;
+  --text: #14161c;
+  --text-muted: #565b6b;
+  --text-faint: #8b8fa0;
+  --accent: #2f6fed;
+  --accent-soft: rgba(47, 111, 237, 0.08);
+  --accent-strong: #1f57cc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+.container-app {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.section-pad {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}
+
+@media (max-width: 768px) {
+  .section-pad {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--border-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-soft) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
