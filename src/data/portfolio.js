@@ -1,3 +1,4 @@
+import profileImage from "../assets/profile/profile.jpg";
 // ============================================================================
 // CENTRALIZED PORTFOLIO DATA
 // Edit everything about this site — name, links, skills, projects, education,
@@ -20,7 +21,7 @@ const portfolioData = {
     email: "mohitkudra@gmail.com",
     phone: "+91-9304866909",
     location: "Phagwara, Punjab, India",
-    profileImage: "/src/assets/profile/profile.jpg",
+    profileImage: profileImage,
     resume: "/resume.pdf",
   },
 
